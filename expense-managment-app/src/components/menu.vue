@@ -1,5 +1,5 @@
 <template>
-    <div :class="linkClass" :linkName="linkName" @click="onMenuClick">{{menuTitle}}</div>
+   <li class="nav-item"> <div :class="linkClass" :linkName="linkName" @click="onMenuClick(this)">{{menuTitle}}</div></li>
 </template>
 
 <script>
@@ -15,16 +15,11 @@
             menuTitle: {type:String}
         },
         methods:{
-            onMenuClick:function(){
+            onMenuClick:function(linkObject){
                 console.log("Clicked");
+                console.log(linkObject);
             }
         }
 
     };
 </script>
-
-<style>
-     .linkClass {
-
-    }
-</style>
